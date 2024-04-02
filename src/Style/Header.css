@@ -1,0 +1,130 @@
+header{
+    margin-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid gold;
+}
+.Header-logo img{
+    width: 150px;
+    cursor: pointer;
+}
+.Header-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header-nav nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+}
+.header-nav a {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    /* color: gold; */
+}
+.header-nav{
+    display: flex;
+    align-items: center;
+}
+.header-line{
+    display:block;
+    height: 60px;
+    width: 3px;
+    background-color: gold;
+    margin: 0 30px;
+}
+.header-btn button{
+    background-color: gold;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    border: 2px solid gold;
+    display: block;
+}
+.header-btn button:hover{
+    background-color: transparent;
+    color: white;
+}
+.header-modal{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(30, 30, 30);
+    z-index: 10;
+    display: none;
+    animation: fadeOut 0.7s ease forwards;
+}
+.close{
+    animation: close 2s ease forwards;
+}
+.open{  
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: slideIn 1s ease forwards, fadeIn 0.5s ease forwards;
+}
+.header-modal nav{
+    /* margin-top: 80px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+.header-modal nav a {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+.hamburger{
+    position: relative;
+    z-index: 11;
+    display: none;
+}
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes close {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  }
+@media(max-width:730px){
+    .header-nav{
+        display: none;
+    }
+    .hamburger{
+        display: block;
+    }
+}
+@media(max-width:425px){
+    .Header-logo img{
+        width: 100px;
+    }
+}

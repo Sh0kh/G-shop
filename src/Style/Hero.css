@@ -1,0 +1,71 @@
+.hero{
+    margin-top: 80px;
+    color: white;
+}
+.hero-wrapper{
+    border-radius: 30px;
+    -webkit-box-shadow: inset 0px 0px 10px 0px gold;
+    -moz-box-shadow: inset 0px 0px 10px 0px gold;
+    box-shadow: inset 0px 0px 10px 0px gold;
+    padding:70px 130px;
+}
+.hero-wrapper h2{
+    color: gold;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.hero-wrapper h1{
+    color: white;
+    text-align: center;
+    font-size: 70px;
+    letter-spacing: 4px; /* Задайте нужное вам пространство */
+
+}
+.hero-wrapper span{
+    font-size: 20px;
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+}
+.hero-wrapper button{
+    margin: 0 auto;
+    display: block;
+    margin-top: 50px;
+    padding: 10px 40px;
+    border-radius: 30px;
+    font-size: 20px;
+    border: 1px solid gold;
+    background-color: gold;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    cursor: pointer;
+}
+.hero-wrapper button:hover{
+    color: white;
+    background-color: transparent;
+}
+@media(max-width:780px){
+    .hero-wrapper h1{
+        font-size: 50px;
+    }
+}
+@media(max-width:615px){
+    .hero-wrapper h1{
+        font-size: 40px;
+    }
+    .hero-wrapper{
+        padding: 70px 30px;
+    }
+}
+@media(max-width:400px){
+    .hero-wrapper h1{
+        font-size: 20px;
+    }
+    .hero-wrapper span{
+        font-size: 15px;
+    }
+    .hero-wrapper{
+        padding: 70px 30px;
+    }
+}
