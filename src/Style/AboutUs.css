@@ -1,0 +1,19 @@
+.AboutUs{
+    padding-top: 150px;
+    padding-bottom: 50px;
+}
+.AboutUs h1{
+    font-size: 50px;
+    color: gold;
+    text-align: center;
+
+}
+.AboutUs p{
+    color: white;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+    font-size: 20px ;
+    letter-spacing: 3px;
+}

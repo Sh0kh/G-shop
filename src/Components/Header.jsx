@@ -19,7 +19,6 @@ function Header() {
                     <nav>
                         <a href="!#">Home</a>
                         <a href="!#">Mahsulot</a>
-                        <a href="!#">FAQ</a>
                     </nav>
                     <div className='header-line'>
 

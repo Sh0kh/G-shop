@@ -1,0 +1,9 @@
+@media(max-width:1000px){
+
+}
+@media(max-width:570px){
+    .AboutUs p{
+        font-size: 15px;
+        width: 100%;
+    }
+}
