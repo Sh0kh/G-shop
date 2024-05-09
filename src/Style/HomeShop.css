@@ -21,6 +21,7 @@
     border: 2px solid gold;
     padding: 10px 20px;
     border-radius: 10px;
+    cursor: pointer;
 }
  .selected{
     background-color: gold !important;
@@ -28,4 +29,55 @@
 }
 .HomeShop-wrapper {
     color: white;
+    margin-top: 50px;
+}
+.HomeShop_card{
+    width: 350px;
+    padding: 20px;
+    text-align: center;
+    -webkit-box-shadow: inset 0px 0px 10px 0px gold;
+    -moz-box-shadow: inset 0px 0px 10px 0px gold;
+    box-shadow: inset 0px 0px 10px 0px gold;
+    border-radius: 20px;
+}
+.HomeShop_card img{
+    border-radius: 20px;
+    width: 300px;
+    height: 300px;
+}
+.swiper-slide {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important; 
+}
+.swiper-button-next{
+    color: gold !important;
+    position: relative;
+    z-index: 100 !important;
+}
+.swiper-button-prev{
+    color: gold !important;
+    position: relative;
+    z-index: 100 !important;
+}
+.swiper-pagination{
+    color: gold !important;
+    /* top: 400px !important;
+    z-index: 100 !important; */
+    display: block !important; 
+    margin-top: 100px;
+    position: relative !important;
+    margin-top: 20px !important;
+}
+.swiper-pagination-bullet{
+    background: gold !important;
+}
+.swiper-pagination-bullet-active{
+    background: gold !important;
+}
+.ipad{
+    display: none;
+}
+.mobile{
+    display: none;
 }

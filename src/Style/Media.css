@@ -1,9 +1,73 @@
-@media(max-width:1000px){
+@media(max-width:1500px){
+    .swiper-wrapper{
+        gap: 10px !important;
+    }
+    .ipad{
+        display: block ;
+    }
+    .pc{
+        display: none;
+    }
+}
+@media(max-width:1080px){
+    .ipad{
+        display: none ;
+    }
+    .mobile{
+        display: block !important;
+    }
+}
 
+@media(max-width:700px){
+    .HomeShop__nav{
+        padding: 0 30px;
+        flex-wrap:wrap;
+        align-items:baseline !important;
+        justify-content: flex-start !important;
+        gap: 10px;
+    }
 }
 @media(max-width:570px){
     .AboutUs p{
         font-size: 15px;
         width: 100%;
+    }
+    .swiper-button-next{
+        top: 550px !important;
+        right: 50px !important;
+    }
+    .swiper-button-prev{
+        top: 550px !important;
+        left: 50px !important;
+    }
+    /* .swiper-wrapper{
+        height: 550px !important;
+    } */
+}
+@media(max-width:430px){
+
+    .HomeShop_card{
+        width: 350px !important;
+    }
+    .HomeShop_card img{
+        width: 300px;
+    }
+    .swiper-slide{
+        margin: 0 !important;
+        margin-right: 40px !important;
+    }
+}
+@media(max-width:390px){
+
+    .HomeShop_card{
+        width: 300px !important;
+    }
+    .HomeShop_card img{
+        width: 250px !important;
+        height: 250px !important;
+    }
+    .swiper-slide{
+        margin: 0 !important;
+        margin-right: 40px !important;
     }
 }

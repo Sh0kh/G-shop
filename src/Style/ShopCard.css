@@ -1,0 +1,103 @@
+.Card{
+    padding-top: 200px;
+    padding-bottom: 100px;
+}
+.Card-wrapper{
+    display: flex;
+    align-items: start;
+    gap: 50px;
+    justify-content: center;
+}
+.Card-img{
+
+}
+.Card-img img{
+    width: 500px;
+    border-radius: 10px;
+    border: 5px solid gold;
+}
+.Card-content h1{
+    color: gold;
+    font-size: 40px;
+}
+.Card-line{
+    background-color: white;
+    height: 3px;
+    width: 300px;
+    margin: 10px 0;
+}
+.Card-content p {
+    color: white;
+    font-size: 20px;
+    width: 500px;
+}
+.Card-content h2 span{
+    color: gold;
+}
+.Card-content h2{
+    color: white;
+    margin: 20px 0;
+}
+.Card-content a{
+    width: 100%;
+    background-color: gold;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 2px solid gold;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: bold;
+    transition: 0.5s;
+    display: block;
+    color: black;
+    text-align: center;
+}
+.Card-content a:hover{
+    background-color: transparent;
+    color: white;
+}
+@media(max-width:1110px){
+    .Card-wrapper{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+    }
+    .Card-content{
+        text-align: center;
+    }
+    .Card-line{
+        margin: 20px auto;
+    }
+}
+@media(max-width:540px){
+    .Card-img img{
+        width: 400px;
+    }
+    .Card-content p{
+        width: 100%;
+    }
+}
+@media(max-width:440px){
+    .Card-img img{
+        width: 350px;
+    }
+    .Card-line{
+        width: 100%;
+    }
+}
+@media(max-width:380px){
+    .Card-img img{
+        width: 300px;
+    }
+}
+@media(max-width:320px){
+    .Card-img img{
+        width: 250px;
+    }
+}
+@media(max-width:280px){
+    .Card-img img{
+        width: 200px;
+    }
+}

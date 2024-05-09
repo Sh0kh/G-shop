@@ -2,14 +2,28 @@ import React, { useState } from 'react'
 import '../Style/Header.css'
 import header_logo from '../img/header-logo.png'
 import Hamburger from 'hamburger-react'
+import {  useEffect } from 'react';
+import { NavLink } from 'react-router-dom'
+
 function Header() {
     const [open, close] = useState([])
 
     const toggleMenu = () => {
         close(!open);
       };
+      const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   return (
-    <header>
+    <header className={isScrolled ? 'header_bg' : ''}>
         <div className='container'>
             <div className='Header-wrapper'>
                 <div className='Header-logo'>
@@ -17,16 +31,14 @@ function Header() {
                 </div>
                 <div className='header-nav'>
                     <nav>
-                        <a href="!#">Home</a>
-                        <a href="!#">Mahsulot</a>
+                    <NavLink to ="/">Home</NavLink>
+                        <NavLink to ="/Shop">Shop</NavLink>
                     </nav>
                     <div className='header-line'>
 
                     </div>
                     <div className='header-btn' >
-                    <button>
-                        Bog`lanish
-                    </button>
+                        <NavLink to ="/Contact">Bog`lanish</NavLink>
                 </div>
                 </div>
                 <div className='hamburger' onClick={toggleMenu}>
@@ -36,14 +48,11 @@ function Header() {
             <div className={`header-modal ${open ? 'close' : 'open'}`}>
                 <div>
                     <nav>
-                        <a href="!#">Home</a>
-                        <a href="!#">Mahsulot</a>
-                        <a href="!#">FAQ</a>
+                        <NavLink to ="/">Home</NavLink>
+                        <NavLink to ="/Shop">Shop</NavLink>
                     </nav>
                     <div className='header-btn'>
-                        <button>
-                            Bog`lanish
-                        </button>
+                        <NavLink to ="/Contact">Bog`lanish</NavLink>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,46 @@
+.HomeContact{
+    padding-bottom: 50px;
+}
+.HomeContact h1{
+    color: gold;
+    font-size: 50px;
+    text-align: center;
+}
+.HomeContent-wrapper{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.Contact-btn{
+    padding: 10px 20px;
+    background-color: gold;
+    border: 2px solid gold;
+    border-radius: 20px;
+    color: black;
+    font-weight: bold;
+}
+.Contact-btn:hover{
+    background-color: transparent;
+    color: white;
+    transition: 0.5s;
+}
+.tel-btn{
+    padding: 10px 20px;
+    background-color: gold;
+    border: 2px solid gold;
+    border-radius: 20px;
+    color: black;
+    font-weight: bold;
+}
+.tel-btn:hover{
+    background-color: transparent;
+    color: white;
+    transition: 0.5s;
+}
+@media(max-width:580px){
+    .HomeContact h1{
+        font-size: 40px;
+    }
+}
