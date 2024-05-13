@@ -1,0 +1,469 @@
+.AdminShop{
+    display: flex;
+}
+.AdminShop-content{
+    width: 100%;
+}
+.AdminShop-header{
+    width: 100%;
+    background-color: gold;
+    padding: 20px;
+}
+.AdminShop-header-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.AdminShop-header button{
+    padding: 10px 20px ;
+    background-color: black;
+    color: white;
+    border: none;
+    border: 2px solid black;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.AdminShop-header button:hover{
+    background-color: transparent;
+    color: black;
+}
+.AdminShop-main{
+    padding: 20px;
+}
+table{
+    width: 100%;
+    color: white;
+}
+.AdminShop-table{
+    width: 100%;
+}
+.AdminShop table{
+    width: 100%;
+}
+.AdminShop thead{
+    width: 100%;
+}
+.AdminShop table thead tr{
+    width: 100%;
+}
+.AdminShop table tbody{
+    width: 100%;
+}
+.AdminShop table tbody tr{
+    width: 100%;
+}
+.AdminShop table tbody tr img{
+    width: 200px;
+    height: 150px;
+    border-radius: 20px;
+    border: 3px solid black;
+    object-fit: cover;
+    object-position: center;
+}
+.AdminShop table thead tr td {
+    /* display: none; */
+    text-align: center;
+    padding: 20px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.AdminShop table thead tr td h3{
+    /* display: none; */
+    color: black;
+    font-size: 20px;
+    padding-top: 20px;
+}
+.AdminShop tbody h3{
+    color: black;
+    font-size: 20px;
+}
+.AdminShop tbody p{
+    text-align: center;
+    width: 500px;
+    color: black;
+    font-size: 15px;
+    margin: 0 auto;
+}
+.AdminShop table tbody td {
+    text-align: center;
+    padding-top: 20px;
+}
+.AdminShop table  {
+    background-color: Gold;
+    border-radius: 30px;
+    padding-bottom: 30px;
+}
+.delete{
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.edit {
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+.delete:hover {
+    color: red;
+}
+.edit:hover {
+    color: rgb(95, 95, 95);
+}
+.AdminShop-footer{
+    margin-top: 20px;
+    width: 100%;
+    padding: 28px 15px;
+    background-color: gold;
+}
+.AdminShop-footer-wrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.AdminShop-footer button{
+    background-color: black;
+    color: gold;
+    font-size: 25px;
+    border: 2px solid black;
+    border-radius: 24px;
+    padding: 10px 20px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.AdminShop-footer button:hover{
+    background-color: transparent;
+    color: black;
+}
+.AdminShop-footer span{
+    color: #1A0A0A;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+}
+.create-modal-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.527);
+    display: none;
+    z-index: 121;
+}
+
+.create-modal {
+    padding: 50px;
+    width: 50%;
+    background-color: black;
+    border: 2px solid gold;
+    position: fixed;
+    top: 10%;
+    left: 28%;
+    border-radius: 30px;
+    z-index: 10;
+    /* margin-left: 400px; */
+
+}
+
+#openModal {
+    display: block;
+}
+
+#openChange {
+    display: block;
+}
+
+.modal-change {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.692);
+    display: none;
+    z-index: 121;
+}
+
+.change-modal {
+    padding: 50px;
+    width: 50%;
+    background-color: black;
+    border: 2px solid gold;
+    position: absolute;
+    top: 10%;
+    left: 28%;
+    border-radius: 30px;
+    z-index: 10;
+}
+
+.create-modal-header,
+.change-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px
+}
+
+.create-modal-header h1,
+.change-header h1 {
+    color: gold;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: "Roboto", sans-serif;
+}
+
+.create-modal-header button,
+.change-header button, .Category-modal-header button {
+    background-color: gold;
+    color: black;
+    padding: 10px 15px;
+    border: 2px solid gold;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.create-modal-header button:hover {
+    background-color: transparent;
+    color: gold
+}
+.Category-modal-header button:hover {
+    background-color: transparent;
+    color: gold
+}
+
+
+.create-modal-main h3 {
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+}
+
+.change-modal h3 {
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.change-header button:hover {
+    background-color: transparent;
+    color: gold
+}
+
+.form-grid label input {
+    width: 100%;
+    padding: 10px 10px;
+    font-size: 15px;
+    border: 1px solid rgb(48, 48, 48);
+    border-radius: 10px;
+    background-color: #0000003B;
+    outline: none;
+    color: white;
+}
+
+.form-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.inp-number {
+    width: 100%;
+    padding: 10px 10px;
+    font-size: 15px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.form-grid label {
+    width: 100%
+}
+
+.modal-foto {
+    width: 100%;
+}
+
+.file-input-container {
+    width: 100%;
+}
+
+.submitBtn {
+    padding: 10px 15px;
+    border: 2px solid gold;
+    background-color: gold;
+    color: black;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.submitBtn:hover {
+    background-color: transparent;
+    color: gold
+}
+
+.modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.modal-footer {
+    position: relative;
+}
+
+.file-input-container {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid gold;
+    border-radius: 5px;
+    background-color: gold;
+    cursor: pointer;
+    color: black;
+    width: 300px;
+}
+
+.file-input-container input[type=file] {
+    cursor: pointer;
+    position: absolute;
+    font-size: 100px;
+    opacity: 0;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+.file-input-container span {
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.file-input-container:hover {
+    background-color: transparent;
+    color: gold;
+    cursor: pointer;
+}
+.change-main h3{
+    color: gold;
+}
+.menu-info {
+    resize: none;
+    overflow: hidden;
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid rgb(48, 48, 48);
+    background-color: #0000003B;
+    outline: none;
+    color: white;
+}
+.Category-modal-bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.692);
+    display: none;
+    z-index: 121;
+}
+.Category-modal{
+    padding: 50px;
+    width: 50%;
+    background-color: #D9A359;
+    position: absolute;
+    top: 10%;
+    left: 28%;
+    border-radius: 30px;
+    z-index: 10;
+}
+.Category-modal-header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px
+}
+.Category-modal-header h1{
+}
+.Category-modal h3{
+    
+}
+.Create{
+    display: block;
+}
+.oppen-Category-Modal{
+   display: block; 
+}
+.modal-footer select {
+    background-color: gold;
+    color: black;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+.modal-footer select option{
+    padding: 5px !important;
+    cursor: pointer;
+    border-radius: 30px;
+}
+.MenuAdmin-nav button{
+    background-color: none;
+    border: none;
+}
+select{
+    color: black !important;
+}
+.modal-footer{
+    gap: 20px;
+}
+.create-modal-main h3{
+    color: gold;
+}
+@media(max-width:1400px){
+    .AdminShop-table {
+        overflow: auto;
+        overflow-x: scroll;
+        width: 100%;
+        
+    }
+
+    .AdminShop-table table {
+        width: 1400px;
+        overflow: auto;
+        overflow-x: scroll;
+        /* display: none; */
+        padding: 20px;
+    }
+}
+@media(max-width:950px){
+
+    .AdminShop{
+        display: flex;
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+    }
+}

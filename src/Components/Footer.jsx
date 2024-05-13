@@ -1,6 +1,7 @@
 import React from 'react'
 import '../Style/Footer.css'
 import footer_logo from '../img/header-logo.png'
+import { NavLink } from 'react-router-dom'
 function Footer() {
   return (
     <footer>
@@ -11,8 +12,8 @@ function Footer() {
                     <img src={footer_logo} alt="logo" />
                 </div>
                 <div className='foote-nav' >
-                    <a className='Contact-btn' href="!#">Mahsulot</a>
-                    <a className='tel-btn' href="!#">Bog`lanish</a>
+                    <NavLink className='tel-btn' to ="/Contact">Bog`lanish</NavLink>
+                    <NavLink className='Contact-btn' to ="/Shop">Mahsulot</NavLink>
                 </div>
                 </div>
                 <div className='footer-media'>

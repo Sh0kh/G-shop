@@ -16,7 +16,7 @@ function Contact() {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi maxime, soluta eligendi obcaecati minima excepturi aperiam tenetur? Ab, vero libero.
                </p>
             </div>
-            <form action="">
+            <form className='Form1' action="">
               <label htmlFor="name">
                 <h3>
                   Ismingiz

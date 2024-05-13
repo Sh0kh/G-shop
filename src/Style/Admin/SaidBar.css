@@ -1,0 +1,73 @@
+.SaidBar{
+    /* background-color: white; */
+    border-right: 2px solid gold;
+    width: 350px;
+    height: 100vh;
+    padding: 30px;
+}
+.Saidbar-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Saidbar-header img{
+    width: 150px;
+}
+.SaidBar-menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+li{
+    list-style: none;
+
+}
+.SaidBar-menu ul li h3{
+    font-size: 25px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    padding: 10px 30px;
+    border-radius: 20px;
+    width: 250px;
+
+}
+.SaidBar-menu ul li h3:hover{
+    background-color: gold;
+    color: black;
+}
+.SaidBar-menu ul li h3 svg{
+    font-size: 40px;
+}
+.Saidbar-footer{
+    display: none;
+}
+@media(max-width:950px){
+    .SaidBar{
+        width: 100%;
+        border: none;
+        border-top: 2px solid gold;
+        margin-top: 30px;
+        height: 50px;
+    }
+    .Saidbar-header{
+        display: none;
+    }
+    .SaidBar-menu{
+        display: none;
+    }
+    .Saidbar-footer{
+        display: block;
+    }
+    .Saidbar-footer ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .Saidbar-footer ul li svg{
+        color: white;
+        font-size: 40px;
+    }
+}

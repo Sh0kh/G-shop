@@ -1,5 +1,6 @@
 import React from 'react'
 import '../Style/Hero.css'
+import { NavLink } from 'react-router-dom'
 function Hero() {
   return (
     <section className='hero'>
@@ -9,14 +10,14 @@ function Hero() {
                     Top G
                 </h2>
                 <h1>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing
+                    Hayotagi kiyinish stillingizni o'zgartiring! 
                 </h1>
                 <span>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Siz izlayotgan kiyimlar bizda..
                 </span>
-                <button>
-                    Bog`lanish
-                </button>
+                <div className='Hero-grid'>
+                <NavLink to ="/Shop">Mahsulot</NavLink>
+                </div>
             </div>
         </div>
     </section>

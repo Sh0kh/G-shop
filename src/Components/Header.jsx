@@ -31,8 +31,8 @@ function Header() {
                 </div>
                 <div className='header-nav'>
                     <nav>
-                    <NavLink to ="/">Home</NavLink>
-                        <NavLink to ="/Shop">Shop</NavLink>
+                    <NavLink to ="/">Bosh sahifa</NavLink>
+                        <NavLink to ="/Shop">Mahsulot</NavLink>
                     </nav>
                     <div className='header-line'>
 

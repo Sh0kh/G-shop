@@ -8,6 +8,10 @@ import Home from './Components/Home';
 import Shop from './Page/Shop';
 import Contact from './Page/Contact';
 import ShopCard from './Components/ShopCard';
+import AdminHome from './Components/Admin/AdminHome';
+import AdminShop from './Components/Admin/AdminShop';
+import AdminCategory from './Components/Admin/AdminCategory';
+import AdminMessage from './Components/Admin/AdminMessage';
 
 const appRouter = createBrowserRouter([
   {
@@ -31,8 +35,25 @@ const appRouter = createBrowserRouter([
         path:"/ShopCard",
         element:<ShopCard/>
       },
-    ]
-  }
+    ],
+  },
+  {
+    path:"/Admin",
+    element:<AdminHome/>
+  },
+  {
+    path:"/AdminShop",
+    element:<AdminShop/>
+  },
+  {
+    path:"/Category",
+    element:<AdminCategory/>
+  },
+  {
+    path:"/Habarlar",
+    element:<AdminMessage/>
+  },
+  
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -1,0 +1,62 @@
+.Dashboard{
+    display: flex;
+}
+.Dashboard-content{
+    width: 100%;
+}
+.Dashboard-content-header{
+    width: 100%;
+    background-color: gold;
+    padding: 20px;
+}
+.Dashboard-main{
+    padding:0 20px;
+    padding-top: 20px;
+}
+.Dashboard-main-wrapper{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+}
+.Dashboard-card{
+    background-color: gold;
+    padding: 10px;
+    border-radius: 20px;
+}
+.Dashboard-card h3{
+    font-size: 20px;
+}
+.Dashboard-card span{
+    font-size: 20px;
+    font-weight: bold;
+}
+.Dashboard-card-grid{
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.Dashboard-card a{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: black;
+    color: white;
+    padding: 7px ;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+.Dashboard-card a:hover{
+    background-color: gold;
+    color: black;
+}
+@media(max-width:950px){
+    .Dashboard-main-wrapper{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .Dashboard{
+        display: flex;
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+    }
+}
