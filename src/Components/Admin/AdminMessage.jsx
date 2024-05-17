@@ -1,10 +1,12 @@
 import React from 'react'
 import '../../Style/Admin/AdminMessage.css'
 import SaidBar from './SaidBar'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import axios from '../../Service/axios'
+
 function AdminMessage() {
 
-    
+    const [items, setItems] = useState([]);
     const [isCreate, setIsCreate] = useState(false);
 
     const toggleClass = () => {
@@ -15,6 +17,40 @@ function AdminMessage() {
     const toggleClass2 = () => {
         setIsEdit(!isEdit);
     };
+
+    
+    const getAllMessages = () => {
+
+        axios.get('/contact/find-all',
+            {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}`,
+                },
+            }
+        )
+            .then((response) => {
+                setItems(response.data);
+            })
+            .catch((error) => {
+                console.error('Error fetching items:', error);
+            });
+    };
+    const MessageDelate = (id) => {
+        axios.delete(`/contact/delete/${id}`, {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
+            },
+        })
+        .then((response) => {
+            getAllMessages();
+        })
+        .catch((error) => {
+            console.error('Ошибка при удалении элемента:', error);
+        });
+    };
+    useEffect(() => {
+        getAllMessages();
+    }, []);
   return (
     <div className='Habarlar'>
         <SaidBar/>
@@ -30,20 +66,20 @@ function AdminMessage() {
                 <div className='Habarlar-table'>
                     <table>
                         <thead>
-                            <tr>
+                        <tr>
                                 <td>
                                     <h3>
-                                        Ism
+                                        Ismi
                                     </h3>
                                 </td>
                                 <td>
                                     <h3>
-                                        Tel
+                                        Telefon raqami
                                     </h3>
                                 </td>
                                 <td>
                                    <h3>
-                                        Malumot
+                                       Habar
                                    </h3>
                                 </td>
                                 <td>
@@ -54,34 +90,34 @@ function AdminMessage() {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            {items.map((item ,index)=>(
+                                <tr key={index}>
                                 <td>
                                     <h3>
-                                        Futbolka
+                                        {item.name}
+                                    </h3>
+                                </td>
+                                <td>
+                                    <h3>
+                                        {item.phone}
                                     </h3>
                                 </td>
                                 <td>
                                    <h3>
-                                        970206868
+                                       {item.info}
                                    </h3>
                                 </td>
                                 <td>
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt aspernatur dolores sapiente ratione at. Molestiae explicabo dolore facilis alias voluptates?
-                                    </p>
-                                </td>
-                                <td>
-                                   <div>
-                                    <button class="delete">
+                                    <button onClick={() => MessageDelate(item.id)} class="delete">
                                     <svg  xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                                             viewBox="0 0 24 24">
                                             <path fill="currentColor"
                                                 d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6zM19 4h-3.5l-1-1h-5l-1 1H5v2h14z" />
                                         </svg>
                                     </button>
-                                   </div>
                                 </td>
                             </tr>
+                            ))}
                         </tbody>
                     </table>
                 </div>

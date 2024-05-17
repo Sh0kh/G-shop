@@ -47,9 +47,9 @@ function Header() {
             </div>
             <div className={`header-modal ${open ? 'close' : 'open'}`}>
                 <div>
-                    <nav>
-                        <NavLink to ="/">Home</NavLink>
-                        <NavLink to ="/Shop">Shop</NavLink>
+                <nav>
+                    <NavLink to ="/">Bosh sahifa</NavLink>
+                        <NavLink to ="/Shop">Mahsulot</NavLink>
                     </nav>
                     <div className='header-btn'>
                         <NavLink to ="/Contact">Bog`lanish</NavLink>

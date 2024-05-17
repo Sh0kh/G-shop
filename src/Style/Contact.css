@@ -110,3 +110,22 @@
     }
     
 }
+@media(max-width:500px){
+    .contact form{
+        width: 100%;
+    }
+    .contact-wrapper{
+        padding: 0;
+        padding-top: 60px;
+    }
+    .contact form h3{
+        font-size: 18px;
+    }
+    .contact form input{
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+    .contact button{
+        font-weight: bold;
+    }
+}

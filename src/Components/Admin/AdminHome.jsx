@@ -2,8 +2,69 @@ import React from 'react'
 import '../../Style/Admin/AdminHome.css'
 import SaidBar from './SaidBar'
 import { NavLink } from 'react-router-dom'
-import Hamburger from 'hamburger-react'
+import axios from '../../Service/axios'
+import { useEffect, useState } from 'react'
+
+
 function AdminHome() {
+  const [items, setItems] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [numberOfElements, setNumberOfElements] = useState({
+    ShopElement: 0,
+    Category: 0,
+    Message: 0,
+  });
+  const getAllShopItems = () => {
+    axios.get('/menu',
+    {
+      headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+  }
+    )
+        .then((response) => {
+          numberOfElements.ShopElement = response.data.length
+        })
+        .catch((error) => {
+            console.error('Error fetching items:', error);
+        });
+};
+const getAllCategories = () => {
+  axios.get('/category',
+  {
+    headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+    },
+}
+  )
+      .then((response) => {
+        numberOfElements.Category = response.data.length
+      })
+      .catch((error) => {
+          console.error('Error fetching categories:', error);
+      });
+};
+    
+const getAllMessages = () => {
+  axios.get('/contact/find-all',
+      {
+          headers: {
+              Authorization: `Bearer ${localStorage.getItem('token')}`,
+          },
+      }
+  )
+      .then((response) => {
+        numberOfElements.Message = response.data.length
+      })
+      .catch((error) => {
+          console.error('Error fetching items:', error);
+      });
+};
+useEffect(() => {
+  getAllMessages();
+  getAllCategories();
+  getAllShopItems();
+}, []);
   return (
     <div className='Dashboard'>
         <SaidBar/>
@@ -21,7 +82,7 @@ function AdminHome() {
                               Mahsulot
                           </h3>
                           <span>
-                            100
+                            {numberOfElements.ShopElement}
                           </span>
                       </div>
                       <NavLink to ="/AdminShop">
@@ -34,7 +95,7 @@ function AdminHome() {
                               Turkum
                           </h3>
                           <span>
-                            100
+                          {numberOfElements.Category}
                           </span>
                       </div>
                       <NavLink to ="/AdminShop">
@@ -47,7 +108,7 @@ function AdminHome() {
                               Habar
                           </h3>
                           <span>
-                            100
+                          {numberOfElements.Message}
                           </span>
                       </div>
                       <NavLink to ="/AdminShop">

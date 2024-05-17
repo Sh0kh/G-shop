@@ -1,12 +1,17 @@
 import React from 'react'
 import '../Style/Hero.css'
 import { NavLink } from 'react-router-dom'
+import gsap from 'gsap-trial';
+import { ScrollTrigger } from 'gsap-trial/ScrollTrigger';
+import { ScrollSmoother } from 'gsap-trial/ScrollSmoother';
+import { useGSAP } from '@gsap/react';
+
 function Hero() {
   return (
     <section className='hero'>
         <div className='container'>
             <div className='hero-wrapper'>
-                <h2>
+                <h2 className='Home_Hero_title'>
                     Top G
                 </h2>
                 <h1>

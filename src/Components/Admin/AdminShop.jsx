@@ -4,7 +4,6 @@ import SaidBar from './SaidBar';
 import axios from '../../Service/axios';
 import CONFIG from '../../stores/config';
 
-
 function AdminShop() {
     const [isCreate, setIsCreate] = useState(false);
     const [isEdit, setIsEdit] = useState(false);
@@ -17,52 +16,60 @@ function AdminShop() {
     const [categories, setCategories] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const CategoryPag = 3;
-    // const [getImg, setImg] = useState(null);
+    const [selectedFile, setSelectedFile] = useState(null);
     const [currentEditItem, setCurrentEditItem] = useState({
         id: '',
         name: '',
         info: '',
         price: '',
         category_id: 0,
+        image: null,
     });
 
     const toggleCreateModal = () => {
         setIsCreate(!isCreate);
     };
-    // const handleImgChange = (e) => {
-    //     setImg(e.target.files[0]);
-    //     console.log(img);
-    //   };
+
+    const handleFileChange = (event) => {
+        setSelectedFile(event.target.files[0]);
+    };
+
     const toggleEditModal = (item) => {
         setCurrentEditItem(item);
         setIsEdit(!isEdit);
     };
+
     const createProduct = (e) => {
         e.preventDefault();
 
         const newProduct = {
-            // image: getImg.value,
             name: productName,
             info: productText,
             price: productPrice,
             category_id: productCategory,
         };
+
         const formData = new FormData();
-        for (let i of Object.keys(newProduct)) {
-            formData.append(i, newProduct[i]);
+        for (let key of Object.keys(newProduct)) {
+            formData.append(key, newProduct[key]);
         }
-        axios.post('/menu',  formData,{
+        if (selectedFile) {
+            formData.append('image', selectedFile);
+        }
+
+        axios.post('/menu', formData, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`,
+                'Content-Type': 'multipart/form-data',
             },
         })
-            .then((response) => {
-                window.location.reload();
-                toggleCreateModal();
-            })
-            .catch((error) => {
-                console.error('Error creating new item:', error);
-            });
+        .then((response) => {
+            window.location.reload();
+            toggleCreateModal();
+        })
+        .catch((error) => {
+            console.error('Error creating new item:', error);
+        });
     };
 
     const getAllShopItems = () => {
@@ -84,50 +91,58 @@ function AdminShop() {
                 console.error('Error fetching categories:', error);
             });
     };
+
     const ProductDelete = (id) => {
         axios.delete(`/menu/${id}`, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`,
             },
         })
-            .then((response) => {
-                getAllShopItems();
-            })
-            .catch((error) => {
-                console.error('Ошибка при удалении элемента:', error);
-            });
+        .then((response) => {
+            getAllShopItems();
+        })
+        .catch((error) => {
+            console.error('Ошибка при удалении элемента:', error);
+        });
     };
-
     const editProduct = (e) => {
         e.preventDefault();
-
-        const updatedItem = {
-
-             name: currentEditItem.name,
-             info:currentEditItem.info,
-             price:currentEditItem.price,
-             category_id:currentEditItem.category_id,
-         };
-
-        axios.put(`/menu/${currentEditItem.id}`, updatedItem, {
+    
+        const formData = new FormData();
+        formData.append('name', currentEditItem.name);
+        formData.append('info', currentEditItem.info);
+        formData.append('price', currentEditItem.price);
+        formData.append('category_id', currentEditItem.category_id);
+    
+        // Если выбрано новое изображение, добавляем его в FormData
+        if (selectedFile) {
+            formData.append('image', selectedFile);
+        } else {
+            // Если изображение не выбрано, добавляем текущее изображение
+            formData.append('image', currentEditItem.img);
+        }
+    
+        axios.put(`/menu/${currentEditItem.id}`, formData, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`,
+                'Content-Type': 'multipart/form-data',
             },
         })
-            .then((response) => {
-                window.location.reload();
-                setCurrentEditItem({id: '',
+        .then((response) => {
+            window.location.reload();
+            setCurrentEditItem({
+                id: '',
                 name: '',
                 info: '',
                 price: '',
                 category_id: 0,
-             });
-            })
-            .catch((error) => {
-                console.error('Ошибка при изменении элемента:', error);
+                img: null, // Удаляем изображение из состояния после успешного редактирования
             });
+        })
+        .catch((error) => {
+            console.error('Ошибка при изменении элемента:', error);
+        });
     };
-
 
     const indexOfLastItem = currentPage * CategoryPag;
     const indexOfFirstItem = indexOfLastItem - CategoryPag;
@@ -146,6 +161,7 @@ function AdminShop() {
             setCurrentPage(currentPage - 1);
         }
     };
+
     useEffect(() => {
         getAllShopItems();
         getAllCategories();
@@ -179,7 +195,7 @@ function AdminShop() {
                                 {currentItems.map((item, index) => (
                                     <tr key={index}>
                                         <td>
-                                        {/* <img src={CONFIG.API_URL + i.image} alt="foto" /> */}
+                                        <img src={CONFIG.API_URL + item.image} alt="foto" />
                                         </td>
                                         <td><h3>{item.name}</h3></td>
                                         <td><p>{item.info}</p></td>
@@ -191,7 +207,7 @@ function AdminShop() {
                                                         <path fill="currentColor" d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6zM19 4h-3.5l-1-1h-5l-1 1H5v2h14z" />
                                                     </svg>
                                                 </button>
-                                                <button onClick={() => toggleEditModal(item)}  className="edit">
+                                                <button onClick={() => toggleEditModal(item)} className="edit">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                                                         <path fill="currentColor" d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83l3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z" />
                                                     </svg>
@@ -264,7 +280,7 @@ function AdminShop() {
                                     <h3>Rasm</h3>
                                     <label className="file-input-container" htmlFor="photo">
                                         <span>Rasm</span>
-                                        {/* <input onChange={(e) => setImg(e.target.files[0])} accept="image/*" type="file" /> */}
+                                        <input id="photo" onChange={handleFileChange} accept="image/*" type="file" />
                                     </label>
                                 </div>
                             </div>
@@ -338,7 +354,7 @@ function AdminShop() {
                                     <h3>Rasm</h3>
                                     <label className="file-input-container" htmlFor="editPhoto">
                                         <span>Rasm</span>
-                                        <input id="editPhoto" accept="image/*" type="file" />
+                                        <input id="editPhoto" onChange={handleFileChange} accept="image/*" type="file" />
                                     </label>
                                 </div>
                             </div>

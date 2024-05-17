@@ -12,6 +12,7 @@ import AdminHome from './Components/Admin/AdminHome';
 import AdminShop from './Components/Admin/AdminShop';
 import AdminCategory from './Components/Admin/AdminCategory';
 import AdminMessage from './Components/Admin/AdminMessage';
+import Login from './Components/Admin/Login';
 
 const appRouter = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ const appRouter = createBrowserRouter([
   {
     path:"/Habarlar",
     element:<AdminMessage/>
+  },
+  {
+    path:"/Login",
+    element:<Login/>
   },
   
 ])
