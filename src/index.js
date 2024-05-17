@@ -33,14 +33,14 @@ const appRouter = createBrowserRouter([
         element:<Contact/>
       },
       {
-        path:"/ShopCard",
+        path:"/Shop/:productID",
         element:<ShopCard/>
       },
     ],
   },
   {
     path:"/Admin",
-    element:<AdminHome/>
+    element:localStorage.getItem("token") ? <AdminHome /> : <Login />
   },
   {
     path:"/AdminShop",

@@ -67,7 +67,7 @@ function ShopHero() {
             <div className='ShopHero_grid'>
             <div className='ShopHero__wrapper'>
                   {filteredItems.map((item) => (
-                            <NavLink to ="/ShopCard" key={item.id}>
+                            <NavLink to ={`/Shop/${item.id}`} key={item.id}>
                                 <div className='HomeShop_card'>
                                     <img src={CONFIG.API_URL + item.image} alt="foto" />
                                     <h2>{item.name}</h2>

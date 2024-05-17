@@ -18,7 +18,7 @@ function AdminHome() {
     axios.get('/menu',
     {
       headers: {
-          Authorization: `Bearer ${localStorage.getItem('token')}`,
+          Authorization: `Bearer ${localStorage.getItem('tokenn')}`,
       },
   }
     )
@@ -33,7 +33,7 @@ const getAllCategories = () => {
   axios.get('/category',
   {
     headers: {
-        Authorization: `Bearer ${localStorage.getItem('token')}`,
+        Authorization: `Bearer ${localStorage.getItem('tokenn')}`,
     },
 }
   )
@@ -49,7 +49,7 @@ const getAllMessages = () => {
   axios.get('/contact/find-all',
       {
           headers: {
-              Authorization: `Bearer ${localStorage.getItem('token')}`,
+              Authorization: `Bearer ${localStorage.getItem('tokenn')}`,
           },
       }
   )

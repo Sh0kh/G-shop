@@ -1,16 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../Style/ShopCard.css'
+import CONFIG from '../stores/config';
+import { useParams } from 'react-router-dom'
 function ShopCard() {
+    let location = useParams()
+    const[pro, setPro] = useState(null)
+    console.log(location.productID);
+
+    useEffect(()=>{
+        getProduct()
+    }, [])
+    async function getProduct() {
+        let fetchP =await fetch("https://market-online.onrender.com/api/menu")
+        let json = await fetchP.json()
+        console.log(json);
+        let filterdProduct = json.find((item)=> item.id ===Number(location.productID))
+        console.log(filterdProduct);
+        setPro(filterdProduct)
+    }
   return (
    <div className='Card'>
         <div className='container'>
         <div className='Card-wrapper'>
             <div className='Card-img'>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcYyGnSwypKgePPJ0-2L0w9VXbhZcqglKE7g&usqp=CAU" alt="" />
+                <img src={CONFIG.API_URL+pro?.image} alt="" />
             </div>
             <div className='Card-content'>
                 <h1>
-                    Фйтболка 
+                   {pro?.name}
                 </h1>
                 <div className='Card-line'>
 
