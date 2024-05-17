@@ -23,7 +23,7 @@ function ShopCard() {
         <div className='container'>
         <div className='Card-wrapper'>
             <div className='Card-img'>
-                <img src={CONFIG.API_URL+pro?.image} alt="" />
+                <img src={CONFIG.API_URL + pro?.image} alt="" />
             </div>
             <div className='Card-content'>
                 <h1>
@@ -33,14 +33,14 @@ function ShopCard() {
 
                 </div>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores id illum quo porro laboriosam dolor similique fugit amet, cumque aliquam.
+                    {pro?.info}
                 </p>
                 <h2>
                     <span>
-                            2000
-                        </span> so`m
+                            {pro?.price}
+                    </span> so`m
                 </h2>
-                <a href="https://t.me/sert_070" target="_blank" rel="noopener noreferrer">  Купит</a>
+                <a href="https://t.me/sert_070" target="_blank" rel="noopener noreferrer">Sotib olish</a>
             </div>
         </div>
         </div>

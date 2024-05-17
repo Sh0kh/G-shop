@@ -30,7 +30,7 @@ function Login() {
           return res.json()
       }).then ((items)=>{
           console.log(items.tokens.refresh_token);
-          localStorage.setItem("tokenn", items?.tokens?.refresh_token)
+          localStorage.setItem("token", items?.tokens?.refresh_token)
       })
     } else {
       navigate("/Login");

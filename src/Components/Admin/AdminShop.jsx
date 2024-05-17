@@ -113,13 +113,12 @@ function AdminShop() {
         formData.append('info', currentEditItem.info);
         formData.append('price', currentEditItem.price);
         formData.append('category_id', currentEditItem.category_id);
-    
         // Если выбрано новое изображение, добавляем его в FormData
         if (selectedFile) {
             formData.append('image', selectedFile);
         } else {
             // Если изображение не выбрано, добавляем текущее изображение
-            formData.append('image', currentEditItem.img);
+            formData.append('image', currentEditItem.image);
         }
     
         axios.put(`/menu/${currentEditItem.id}`, formData, {

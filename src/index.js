@@ -44,15 +44,15 @@ const appRouter = createBrowserRouter([
   },
   {
     path:"/AdminShop",
-    element:<AdminShop/>
+    element:localStorage.getItem("token") ? <AdminShop/> : <Login/>
   },
   {
     path:"/Category",
-    element:<AdminCategory/>
+    element: localStorage.getItem("token") ? <AdminCategory/> : <Login/>
   },
   {
     path:"/Habarlar",
-    element:<AdminMessage/>
+    element:localStorage.getItem("token") ? <AdminMessage/> : <Login/>
   },
   {
     path:"/Login",
