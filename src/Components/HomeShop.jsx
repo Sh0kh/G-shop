@@ -1,16 +1,19 @@
 import React from 'react'
 import '../Style/HomeShop.css'
 import '../Style/Media.css'
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 import axios from '../Service/axios';
 import CONFIG from '../stores/config';
 import  { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide, } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import gsap from 'gsap-trial';
+import { ScrollTrigger } from 'gsap-trial/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+gsap.registerPlugin(useGSAP, ScrollTrigger,);
 function HomeShop() {
     // const [itemName, setItemName] = useState('');
     const [items, setItems] = useState([]);
@@ -52,12 +55,40 @@ function HomeShop() {
     };
 
     const filteredItems = selectedCategory ? items.filter(item => item.category_id === selectedCategory) : items;
-
-
+    useGSAP(()=>{
+        gsap.fromTo('.HomeShop_title',
+      {
+        y:'-100%',
+        opacity:0,
+      },
+      {
+        y:'0%',
+        opacity:1,
+        scrollTrigger:{
+          trigger:'.HomeShop_title',
+          start:'top 90%',
+          scrub:1
+        }
+      }
+    )
+        gsap.fromTo('.HomeShop__nav',
+      {
+        opacity:0,
+      },
+      {
+        opacity:1,
+        scrollTrigger:{
+          trigger:'.HomeShop__nav',
+          start:'top 90%',
+          scrub:1
+        }
+      }
+    )
+    })
   return (
     <section className='HomeShop'>
         <div className='container'>
-            <h1 >
+            <h1 className='HomeShop_title'>
                 Mahsulot
             </h1>
             <div className='HomeShop__nav'>

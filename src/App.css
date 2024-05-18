@@ -29,3 +29,7 @@ a{
     border-radius: 15px;
 
 }
+/* App.css */
+.scroll-wrapper{
+    height: 100vh !important;
+}

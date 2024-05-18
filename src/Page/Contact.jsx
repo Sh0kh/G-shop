@@ -3,7 +3,10 @@ import '../Style/Contact.css'
 import { useState } from 'react';
 import axios from '../Service/axios';
 
-
+import gsap from 'gsap-trial';
+import { ScrollTrigger } from 'gsap-trial/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+gsap.registerPlugin(useGSAP, ScrollTrigger,);
 function Contact() {
   const [contactName, setContactName] = useState('');
   const [contactPhone, setContactPhone] = useState('');
@@ -32,7 +35,31 @@ function Contact() {
     .catch((error) => {
       console.error('Error creating contact:', error);
     });
+
   };
+  useGSAP(()=>{
+    gsap.fromTo('.Form1',
+    {
+      y:'-100%',
+      opacity:0,
+    },
+    {
+      y:'0%',
+      opacity:1,
+      
+    }
+  )
+    gsap.fromTo('.contact-content',
+    {
+      y:'-100%',
+      opacity:0,
+    },
+    {
+      y:'0%',
+      opacity:1,
+    }
+  )
+  })
   return (
     <section className='contact'>
       <div className='container'>

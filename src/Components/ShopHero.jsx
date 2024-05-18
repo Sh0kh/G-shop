@@ -4,7 +4,10 @@ import { NavLink } from 'react-router-dom'
 import  { useState, useEffect } from 'react';
 import axios from '../Service/axios';
 import CONFIG from '../stores/config';
-
+import gsap from 'gsap-trial';
+import { ScrollTrigger } from 'gsap-trial/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+gsap.registerPlugin(useGSAP, ScrollTrigger,);
 function ShopHero() {
      // const [itemName, setItemName] = useState('');
      const [items, setItems] = useState([]);
@@ -46,11 +49,40 @@ function ShopHero() {
      };
  
      const filteredItems = selectedCategory ? items.filter(item => item.category_id === selectedCategory) : items;
- 
+     useGSAP(()=>{
+        gsap.fromTo('.HomeShop_title',
+        {
+          y:'-100%',
+          opacity:0,
+        },
+        {
+          y:'0%',
+          opacity:1,
+          scrollTrigger:{
+            trigger:'.HomeShop_title',
+            start:'top 90%',
+            scrub:1
+          }
+        }
+      )
+      gsap.fromTo('.ShopHero__nav',
+      {
+        opacity:0,
+      },
+      {
+        opacity:1,
+        scrollTrigger:{
+          trigger:'.ShopHero__nav',
+          start:'top 90%',
+          scrub:1
+        }
+      }
+    )
+    })
   return (
     <section className='ShopHero'>
         <div className='container'>
-            <h1 >
+            <h1 className='HomeShop_title'>
                 Mahsulot
             </h1>
             <div className='ShopHero__nav'>
