@@ -1,5 +1,6 @@
 .Category{
     display: flex;
+        padding-bottom: 80px;
 }
 .Category-content{
     width: 100%;

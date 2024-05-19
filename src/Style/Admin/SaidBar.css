@@ -51,6 +51,11 @@ li{
         border-top: 2px solid gold;
         margin-top: 30px;
         height: 50px;
+        position: fixed;
+        bottom: 0;
+        background-color: black;
+        padding: 15px;
+        height: 80px;
     }
     .Saidbar-header{
         display: none;
@@ -60,6 +65,7 @@ li{
     }
     .Saidbar-footer{
         display: block;
+        padding-bottom: 30px;
     }
     .Saidbar-footer ul {
         display: flex;

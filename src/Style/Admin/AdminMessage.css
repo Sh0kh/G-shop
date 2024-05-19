@@ -1,5 +1,6 @@
 .Habarlar{
     display: flex;
+    padding-bottom: 80px;
 }
 .Habarlar-content{
     width: 100%;

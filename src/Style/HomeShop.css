@@ -81,3 +81,8 @@
 .mobile{
     display: none;
 }
+@media(max-width:430px){
+    .HomeShop__nav button{
+        padding: 8px !important;
+    }
+}
