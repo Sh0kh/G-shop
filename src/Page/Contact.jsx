@@ -71,9 +71,6 @@ function Contact() {
                <h1>
                   O`z fikiringizdi bildiring!
                </h1>
-               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi maxime, soluta eligendi obcaecati minima excepturi aperiam tenetur? Ab, vero libero.
-               </p>
             </div>
             <form onSubmit={createContact} className='Form1' action="">
             <label htmlFor="name">

@@ -17,13 +17,13 @@ gsap.registerPlugin(useGSAP, ScrollTrigger,);
 function HomeShop() {
     // const [itemName, setItemName] = useState('');
     const [items, setItems] = useState([]);
-    const [selectedButton, setSelectedButton] = useState(null);
+    // const [selectedButton, setSelectedButton] = useState(null);
     const [categories, setCategories] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState(null);
-    const [error, setError] = useState(null);
-    const handleButtonClick = (buttonId) => {
-      setSelectedButton(buttonId);
-    };
+    // const [error, setError] = useState(null);
+    // const handleButtonClick = (buttonId) => {
+    //   setSelectedButton(buttonId);
+    // };
     useEffect(() => {
         getAllCategories();
         getAllShopItems();
@@ -36,7 +36,7 @@ function HomeShop() {
             })
             .catch((error) => {
                 console.error('Ошибка при получении списка категорий:', error);
-                setError(error); // Устанавливаем ошибку в состояние
+                // setError(error); 
             });
     };
 
@@ -47,7 +47,7 @@ function HomeShop() {
             })
             .catch((error) => {
                 console.error('Ошибка при получении списка товаров:', error);
-                setError(error); // Устанавливаем ошибку в состояние
+                // setError(error);
             });
     };
     const handleCategoryClick = (categoryId) => {
