@@ -23,8 +23,8 @@
         padding: 0 30px;
         flex-wrap:wrap;
         align-items:baseline !important;
-        justify-content: flex-start !important;
-        gap: 10px;
+        justify-content: center !important;
+        gap: 10px !important; 
     }
 }
 @media(max-width:570px){

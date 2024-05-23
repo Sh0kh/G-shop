@@ -1,5 +1,6 @@
 .AdminShop{
     display: flex;
+    padding-bottom: 80px;
 }
 .AdminShop-content{
     width: 100%;
