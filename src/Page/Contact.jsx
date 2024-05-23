@@ -3,8 +3,8 @@ import '../Style/Contact.css'
 import { useState } from 'react';
 import axios from '../Service/axios';
 
-import gsap from 'gsap-trial';
-import { ScrollTrigger } from 'gsap-trial/ScrollTrigger';
+import gsap from 'gsap';  
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 gsap.registerPlugin(useGSAP, ScrollTrigger,);
 function Contact() {
@@ -71,6 +71,7 @@ function Contact() {
                <h1>
                   O`z fikiringizdi bildiring!
                </h1>
+
             </div>
             <form onSubmit={createContact} className='Form1' action="">
             <label htmlFor="name">

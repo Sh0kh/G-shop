@@ -10,7 +10,7 @@ import CONFIG from '../stores/config';
 import  { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide, } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-import gsap from 'gsap-trial';
+import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 gsap.registerPlugin(useGSAP, ScrollTrigger,);

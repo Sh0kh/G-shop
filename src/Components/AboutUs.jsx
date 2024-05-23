@@ -1,7 +1,7 @@
 import React from 'react'
 import '../Style/AboutUs.css'
 import '../Style/Media.css'
-import gsap from 'gsap-trial';
+import gsap from 'gsap';  
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 gsap.registerPlugin(useGSAP, ScrollTrigger,);
