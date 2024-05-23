@@ -2,7 +2,7 @@ import React from 'react'
 import '../Style/Strengths.css'
 import '../Style/Media.css'
 import gsap from 'gsap-trial';
-import { ScrollTrigger } from 'gsap-trial/ScrollTrigger';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 gsap.registerPlugin(useGSAP, ScrollTrigger,);
 function Strengths() {
