@@ -29,7 +29,7 @@ function Login() {
       }).then(res=>{
           return res.json()
       }).then ((items)=>{
-          console.log(items.tokens.refresh_token);
+          // console.log(items.tokens.refresh_token);
           localStorage.setItem("token", items?.tokens?.refresh_token)
       })
     } else {

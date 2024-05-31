@@ -6,6 +6,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 gsap.registerPlugin(useGSAP, ScrollTrigger,);
 function HomeContact() {
+  const ScTop = () => {
+    window.scrollTo(0, 0);
+}
     useGSAP(()=>{
         gsap.fromTo('.HomeContact_title',
         {
@@ -62,8 +65,8 @@ function HomeContact() {
                 Bog`lanish uchun
             </h1>
             <div className='HomeContent-wrapper'>
-                <NavLink className='Contact-btn' to ="/Contact">Izoh qoldirish</NavLink>
-                <a className='tel-btn' href="!#">Bog`lanish</a>
+                <NavLink onClick={ScTop}  className='Contact-btn' to ="/Contact">Izoh qoldirish</NavLink>
+                <a className='tel-btn'  rel="noreferrer" href="https://t.me/sert_070">Bog`lanish</a>
             </div>
         </div>
    </section>

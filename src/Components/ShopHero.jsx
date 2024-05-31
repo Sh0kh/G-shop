@@ -9,6 +9,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 function ShopHero() {
+    const ScTop = () => {
+        window.scrollTo(0, 0);
+    }
     // const [itemName, setItemName] = useState('');
     const [items, setItems] = useState([]);
     // const [selectedButton, setSelectedButton] = useState(null);
@@ -97,11 +100,11 @@ function ShopHero() {
                 <div className='ShopHero_grid'>
                     <div className='ShopHero__wrapper'>
                         {filteredItems.map((item) => (
-                            <NavLink to={`/Shop/${item.id}`} key={item.id}>
+                            <NavLink onClick={ScTop} to={`/Shop/${item.id}`} key={item.id}>
                                 <div className='HomeShop_card'>
                                     <img src={CONFIG.API_URL + item.image} alt={item.name} />
                                     <h2>{item.name}</h2>
-                                    <span>{item.price}</span>
+                                    <span>{item.price} so`m</span>
                                 </div>
                             </NavLink>
                         ))}

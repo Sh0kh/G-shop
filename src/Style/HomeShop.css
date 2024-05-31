@@ -81,6 +81,9 @@
 .mobile{
     display: none;
 }
+.HomeShop_card{
+    color: white;
+}
 @media(max-width:430px){
     .HomeShop__nav button{
         padding: 8px !important;

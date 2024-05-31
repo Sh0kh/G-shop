@@ -13,6 +13,10 @@ import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import { NavLink } from 'react-router-dom';
+const ScTop = () => {
+    window.scrollTo(0, 0);
+}
 gsap.registerPlugin(useGSAP, ScrollTrigger,);
 function HomeShop() {
     // const [itemName, setItemName] = useState('');
@@ -115,11 +119,13 @@ function HomeShop() {
                 >
                      {filteredItems.map((item) => (
                             <SwiperSlide key={item.id}>
+                                <NavLink onClick={ScTop} to={`/Shop/${item.id}`} key={item.id}>
                                 <div className='HomeShop_card'>
-                                    <img src={CONFIG.API_URL + item.image} alt="foto" />
+                                    <img src={CONFIG.API_URL + item.image} alt={item.name} />
                                     <h2>{item.name}</h2>
-                                    <span>{item.price}</span>
+                                    <span>{item.price} so`m</span>
                                 </div>
+                            </NavLink>
                             </SwiperSlide>
                         ))}
                 </Swiper>
@@ -137,11 +143,13 @@ function HomeShop() {
                 >
                 {filteredItems.map((item) => (
                             <SwiperSlide key={item.id}>
+                                  <NavLink onClick={ScTop} to={`/Shop/${item.id}`} key={item.id}>
                                 <div className='HomeShop_card'>
-                                    <img src={CONFIG.API_URL + item.image} alt="foto" />
+                                    <img src={CONFIG.API_URL + item.image} alt={item.name} />
                                     <h2>{item.name}</h2>
-                                    <span>{item.price}</span>
+                                    <span>{item.price} so`m</span>
                                 </div>
+                            </NavLink>
                             </SwiperSlide>
                         ))}
                 </Swiper>
@@ -159,11 +167,13 @@ function HomeShop() {
                 >
                 {filteredItems.map((item) => (
                             <SwiperSlide key={item.id}>
+                                <NavLink onClick={ScTop} to={`/Shop/${item.id}`} key={item.id}>
                                 <div className='HomeShop_card'>
-                                    <img src={CONFIG.API_URL + item.image} alt="foto" />
+                                    <img src={CONFIG.API_URL + item.image} alt={item.name} />
                                     <h2>{item.name}</h2>
-                                    <span>{item.price}</span>
+                                    <span>{item.price} so`m</span>
                                 </div>
+                            </NavLink>
                             </SwiperSlide>
                         ))}
                 </Swiper>

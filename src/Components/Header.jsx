@@ -23,7 +23,13 @@ function Header() {
 
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
-
+    const ScTop = () => {
+        window.scrollTo(0, 0);
+    }
+    const handleNavClick = () => {
+        toggleMenu();
+        ScTop();
+    };
     return (
         <header className={isScrolled ? 'header_bg' : ''}>
             <div className='container'>
@@ -33,12 +39,12 @@ function Header() {
                     </div>
                     <div className='header-nav'>
                         <nav>
-                            <NavLink to="/">Bosh sahifa</NavLink>
-                            <NavLink to="/Shop">Mahsulot</NavLink>
+                            <NavLink onClick={ScTop} to="/">Bosh sahifa</NavLink>
+                            <NavLink onClick={ScTop} to="/Shop">Mahsulot</NavLink>
                         </nav>
                         <div className='header-line'></div>
                         <div className='header-btn' >
-                            <NavLink to="/Contact">Bog`lanish</NavLink>
+                            <NavLink onClick={ScTop} to="/Contact">Bog`lanish</NavLink>
                         </div>
                     </div>
                     <div className='hamburger' onClick={toggleMenu}>
@@ -48,11 +54,11 @@ function Header() {
                 <div className={`header-modal ${open ? 'open' : 'close'}`}>
                     <div>
                         <nav>
-                            <NavLink onClick={toggleMenu} to="/">Bosh sahifa</NavLink>
-                            <NavLink onClick={toggleMenu} to="/Shop">Mahsulot</NavLink>
+                            <NavLink onClick={handleNavClick} to="/">Bosh sahifa</NavLink>
+                            <NavLink onClick={handleNavClick} to="/Shop">Mahsulot</NavLink>
                         </nav>
                         <div className='header-btn'>
-                            <NavLink onClick={toggleMenu} to="/Contact">Bog`lanish</NavLink>
+                            <NavLink onClick={handleNavClick} to="/Contact">Bog`lanish</NavLink>
                         </div>
                     </div>
                 </div>

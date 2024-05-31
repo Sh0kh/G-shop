@@ -3,6 +3,9 @@ import '../Style/Footer.css'
 import footer_logo from '../img/header-logo.png'
 import { NavLink } from 'react-router-dom'
 function Footer() {
+    const ScTop = () => {
+        window.scrollTo(0, 0);
+    }
   return (
     <footer>
         <div className='container'>
@@ -12,8 +15,8 @@ function Footer() {
                     <img src={footer_logo} alt="logo" />
                 </div>
                 <div className='foote-nav' >
-                    <NavLink className='tel-btn' to ="/Contact">Bog`lanish</NavLink>
-                    <NavLink className='Contact-btn' to ="/Shop">Mahsulot</NavLink>
+                    <NavLink onClick={ScTop} className='tel-btn' to ="/Contact">Bog`lanish</NavLink>
+                    <NavLink onClick={ScTop} className='Contact-btn' to ="/Shop">Mahsulot</NavLink>
                 </div>
                 </div>
                 <div className='footer-media'>
