@@ -1,4 +1,4 @@
 import axios from 'axios' 
-axios.defaults.baseURL = 'https://market-online.onrender.com/api'
+axios.defaults.baseURL = 'http://api.shop-g.uz/api'
 
 export default axios

@@ -1,5 +1,5 @@
 const CONFIG = {
-    API_URL: 'https://market-online.onrender.com/',
+    API_URL: 'http://api.shop-g.uz/',
   };
   
   export default CONFIG;
